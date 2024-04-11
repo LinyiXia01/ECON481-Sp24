@@ -40,7 +40,7 @@ def estimate_mle(y: np.array, X: np.array) -> np.array:
         """
         beta0, beta1, beta2, beta3 = params
         epsilon = y[:,0] - beta0 - beta1*X[:,0] - beta2*X[:,1] - beta3*X[:,2] 
-        ll = -0.5 * np.sum(np.log(2 * np.pi) + np.log(1) + 1*(epsilon)**2)
+        ll = -0.5 * np.sum(np.log(2 * np.pi) + epsilon**2)
         return -ll
 
     result = optimize.minimize(
